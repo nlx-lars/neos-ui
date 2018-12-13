@@ -53,7 +53,7 @@
       <trans-unit id="ckeditor__toolbar__link__noFollow" xml:space="preserve">
 				<source>No follow</source>
 			<target xml:lang="pl" state="needs-translation">No follow</target></trans-unit>
-      <trans-unit id="ckeditor__toolbar__link__targetBlank" xml:space="preserve">
+      <trans-unit id="ckeditor__toolbar__link__target" xml:space="preserve">
 				<source>Open in new window</source>
 			<target xml:lang="pl" state="needs-translation">Open in new window</target></trans-unit>
       <trans-unit id="ckeditor__toolbar__link__titlePlaceholder" xml:space="preserve">

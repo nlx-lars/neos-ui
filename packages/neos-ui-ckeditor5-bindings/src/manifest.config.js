@@ -5,7 +5,7 @@ import NeosPlaceholder from './plugins/neosPlaceholder';
 import InlineMode from './plugins/inlineMode';
 import Sub from './plugins/sub';
 import Sup from './plugins/sup';
-import LinkTargetBlank from './plugins/linkTargetBlank';
+import LinkTarget from './plugins/linkTarget';
 import LinkRelNofollow from './plugins/linkRelNofollow';
 import LinkTitle from './plugins/linkTitle';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
@@ -86,7 +86,7 @@ export default ckEditorRegistry => {
     config.set('underline', addPlugin(Underline, $get('formatting.underline')));
     config.set('strikethrough', addPlugin(Strikethrough, $get('formatting.strikethrough')));
     config.set('link', addPlugin(Link, $get('formatting.a')));
-    config.set('linkTargetBlank', addPlugin(LinkTargetBlank, $get('formatting.a')));
+    config.set('linkTarget', addPlugin(LinkTarget, $get('formatting.a')));
     config.set('linkRelNofollow', addPlugin(LinkRelNofollow, $get('formatting.a')));
     config.set('linkTitle', addPlugin(LinkTitle, $get('formatting.a')));
     config.set('table', addPlugin(Table, i => $get('formatting.table', i)));

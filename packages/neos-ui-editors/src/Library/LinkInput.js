@@ -44,7 +44,7 @@ export default class LinkInput extends PureComponent {
             disabled: PropTypes.bool,
             anchor: PropTypes.bool,
             title: PropTypes.bool,
-            targetBlank: PropTypes.bool,
+            target: PropTypes.bool,
             relNofollow: PropTypes.bool,
             assets: PropTypes.bool,
             nodes: PropTypes.bool
@@ -53,7 +53,7 @@ export default class LinkInput extends PureComponent {
         linkValue: PropTypes.string,
         linkTitleValue: PropTypes.string,
         linkRelNofollowValue: PropTypes.bool,
-        linkTargetBlankValue: PropTypes.bool,
+        linkTargetValue: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
         onLinkChange: PropTypes.func.isRequired,
         onLinkRelChange: PropTypes.func,
         onLinkTargetChange: PropTypes.func,
@@ -329,14 +329,33 @@ export default class LinkInput extends PureComponent {
                         </div>
                     </div>)}
                 <div className={style.linkInput__optionsPanelDouble}>
-                    {$get('targetBlank', this.props.options) && (
+                    {$get('target', this.props.options) && (
                         <div className={style.linkInput__optionsPanelItem}>
-                            <label>
-                                <CheckBox
-                                    onChange={this.props.onLinkTargetChange}
-                                    isChecked={this.props.linkTargetBlankValue || false}
-                                /> {this.props.i18nRegistry.translate('Neos.Neos.Ui:Main:ckeditor__toolbar__link__targetBlank', 'Open in new window')}
+                            <label className={style.linkInput__optionsPanelLabel} htmlFor="__neos__linkEditor--target">
+                                {this.props.i18nRegistry.translate('Neos.Neos.Ui:Main:ckeditor__toolbar__link__target', 'Select link target')}
                             </label>
+                            <SelectBox
+                                id="__neos__linkEditor--target"
+                                options={[
+                                    {
+                                        label: 'none',
+                                        value: false
+                                    },
+                                    {
+                                        label: 'new Window',
+                                        value: '_blank'
+                                    },
+                                    {
+                                        label: 'same Window',
+                                        value: '_self'
+                                    }
+                                ]}
+                                optionValueField="value"
+                                onValueChange={value => {
+                                    this.props.onLinkTargetChange(value);
+                                }}
+                                value={this.props.linkTargetValue || false}
+                            />
                         </div>)}
                     {$get('relNofollow', this.props.options) && (
                         <div className={style.linkInput__optionsPanelItem}>

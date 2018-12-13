@@ -47,7 +47,7 @@ export default class LinkButton extends PureComponent {
                 // We need to remove all attirbutes before unsetting the link
                 executeCommand('linkTitle', false, false);
                 executeCommand('linkRelNofollow', false, false);
-                executeCommand('linkTargetBlank', false, false);
+                executeCommand('linkTarget', false, false);
                 executeCommand('unlink');
             }
             this.setState({isOpen: false});
@@ -68,8 +68,8 @@ export default class LinkButton extends PureComponent {
         executeCommand('linkTitle', value, false);
     }
 
-    handleLinkTargetChange = () => {
-        executeCommand('linkTargetBlank', undefined, false);
+    handleLinkTargetChange = value => {
+        executeCommand('linkTarget', value, false);
     }
 
     handleLinkRelChange = () => {
@@ -94,7 +94,7 @@ export default class LinkButton extends PureComponent {
                             linkValue={this.getLinkValue()}
                             linkTitleValue={this.getLinkTitleValue()}
                             linkRelNofollowValue={this.getLinkRelValue()}
-                            linkTargetBlankValue={this.getLinkTargetValue()}
+                            linkTargetValue={this.getLinkTargetValue()}
                             onLinkChange={this.handleLinkChange}
                             onLinkTitleChange={this.handleLinkTitleChange}
                             onLinkRelChange={this.handleLinkRelChange}
@@ -124,6 +124,6 @@ export default class LinkButton extends PureComponent {
     }
 
     getLinkTargetValue() {
-        return $get('linkTargetBlank', this.props.formattingUnderCursor) || false;
+        return $get('linkTarget', this.props.formattingUnderCursor) || false;
     }
 }

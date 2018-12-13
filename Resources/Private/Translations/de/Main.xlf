@@ -53,9 +53,9 @@
       <trans-unit id="ckeditor__toolbar__link__noFollow" xml:space="preserve" approved="yes">
 				<source>No follow</source>
 			<target xml:lang="de">nicht folgen</target></trans-unit>
-      <trans-unit id="ckeditor__toolbar__link__targetBlank" xml:space="preserve" approved="yes">
+      <trans-unit id="ckeditor__toolbar__link__target" xml:space="preserve" approved="yes">
 				<source>Open in new window</source>
-			<target xml:lang="de">Öffne Fenster in neuem Tab</target></trans-unit>
+			<target xml:lang="de">Ziel auswählen</target></trans-unit>
       <trans-unit id="ckeditor__toolbar__link__titlePlaceholder" xml:space="preserve" approved="yes">
 				<source>Enter link title</source>
 			<target xml:lang="de">Link Titel eingeben</target></trans-unit>
