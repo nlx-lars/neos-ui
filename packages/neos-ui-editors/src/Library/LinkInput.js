@@ -338,7 +338,7 @@ export default class LinkInput extends PureComponent {
                                 id="__neos__linkEditor--target"
                                 options={[
                                     {
-                                        label: 'none',
+                                        label: 'Default',
                                         value: false
                                     },
                                     {
